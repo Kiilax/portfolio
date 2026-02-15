@@ -31,7 +31,7 @@ export default function About() {
           </p>
           <div className="mt-8">
             <a
-              href="/Simon Husser 2.pdf"
+              href="/cv-simon.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-neutral-900 text-white rounded-full text-sm font-medium hover:bg-neutral-800 transition-colors"
@@ -44,7 +44,7 @@ export default function About() {
 
         <div className="relative w-48 h-48 md:w-64 md:h-64 shrink-0 mx-auto md:mx-0 order-first md:order-last">
           <Image
-            src="/simon-cv+.png"
+            src="/simon-picture.png"
             alt="Portrait de Simon Husser"
             height={400}
             width={400}
