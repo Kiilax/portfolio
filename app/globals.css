@@ -1,36 +1,43 @@
 @import "tailwindcss";
 
 :root {
-  --background: #dedcb9;
-  --foreground: #333333;
-  --nav-bg: rgba(255, 251, 235, 0.8);
-  --nav-border: rgba(231, 229, 228, 0.5);
-  --nav-pill-hover: rgba(222, 220, 185, 0.4);
-  --nav-text: #333333;
-  --nav-text-active: #fffbeb;
-  --nav-pill-active: #333333;
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --nav-bg: #1a1a1a;
+  --nav-border: transparent;
+  --nav-pill-hover: rgba(152, 38, 244, 0.2);
+  --nav-text: #ffffff;
+  --nav-text-active: #ffffff;
+  --nav-pill-active: rgb(152, 38, 244);
+  --scrollbar-thumb: rgb(152, 38, 244);
+  --scrollbar-track: transparent;
 }
 
 [data-theme="coder"] {
-  --background: #1a1a1a;
-  --foreground: #00ff00;
-  --nav-bg: rgba(0, 20, 0, 0.9);
-  --nav-border: rgba(0, 255, 0, 0.3);
-  --nav-pill-active: #00ff00;
-  --nav-pill-hover: rgba(0, 255, 0, 0.2);
-  --nav-text: #00ff00;
-  --nav-text-active: #000000;
+  --background: #0f172a; /* Slate 900 - Deep Space Blue */
+  --foreground: #cbd5e1; /* Slate 300 - Soft White */
+  --nav-bg: rgba(30, 41, 59, 0.95); /* Slate 800 */
+  --nav-border: #334155; /* Slate 700 */
+  --nav-pill-active: #818cf8; /* Indigo 400 - Soft Purple/Blue */
+  --nav-pill-hover: rgba(129, 140, 248, 0.15);
+  --nav-text: #94a3b8; /* Slate 400 */
+  --nav-text-active: #ffffff;
+  --scrollbar-thumb: #818cf8;
 }
 
 
-html, body {
+html {
   background: var(--background);
+  scrollbar-width: auto;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  transition: background 0.1s ease-in-out;
+}
+
+body {
+  background: transparent;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  scrollbar-gutter: stable;
-  scrollbar-width: auto;
-  scrollbar-color: #92917b transparent;
-  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+  transition: color 0.1s ease-in-out;
 }
 
 ::-webkit-scrollbar {
@@ -39,12 +46,13 @@ html, body {
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #92917b;
+  background-color: var(--scrollbar-thumb);
   border-radius: 9999px;
-  border: 3px solid #dedcb9;
+  border: 4px solid var(--background);
+  background-clip: content-box;
 }
 

@@ -1,47 +1,56 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import { CircuitBackground } from "@/app/ui/bg-animations";
 
 export default function Home() {
   return (
-    <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 min-h-[60vh]">
-      <div className="flex-1 space-y-6 text-center md:text-left">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-800">
-          Simon Husser
-        </h1>
-        <p className="text-lg leading-relaxed text-neutral-700 max-w-xl mx-auto md:mx-0">
-          Bonjour, je suis un développeur passionné par la <strong>data</strong>{" "}
-          et le <strong>développement full-stack</strong>.
-        </p>
-        <p className="text-lg leading-relaxed text-neutral-700 max-w-xl mx-auto md:mx-0">
-          Diplômé d&apos;un <strong>BUT Informatique</strong>, j&apos;ai affiné
-          mes compétences lors d&apos;une alternance au sein d&apos;un{" "}
-          <strong>cabinet d&apos;expertise en bases de données</strong>.
-          J&apos;aime construire des solutions performantes et épurées.
-        </p>
-        <div className="pt-6 flex gap-4 justify-center md:justify-start">
-          <Link
-            href="/projects"
-            className="px-6 py-2 bg-[#333333] text-[#dedcb9] rounded-full font-medium hover:opacity-90 transition-opacity"
+    <div className="flex flex-col md:flex-row items-center justify-between gap-12 min-h-[75vh] max-w-6xl mx-auto px-4 md:px-0 relative">
+      <CircuitBackground />
+      <div className="flex-1 space-y-10">
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-6xl md:text-8xl font-bold tracking-tight"
+        >
+          <motion.span
+            animate={{ backgroundPosition: ["0% 50%", "100% 50%"] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+            style={{ backgroundSize: "200% auto" }}
+            className="text-transparent bg-clip-text bg-linear-to-r from-[rgb(152,38,244)] via-violet-500 to-[rgb(152,38,244)] inline-block pb-2"
           >
-            Voir mes projets
-          </Link>
-          <Link
-            href="/contact"
-            className="px-6 py-2 border border-[#333333] text-[#333333] rounded-full font-medium hover:bg-[#333333]/10 transition-colors"
-          >
-            Me contacter
-          </Link>
+            Moi, c&apos;est <br />
+            Simon
+          </motion.span>
+        </motion.h1>
+
+        <div className="space-y-6">
+          <p className="text-2xl md:text-4xl leading-relaxed text-neutral-800 font-medium">
+            Je suis{" "}
+            <span className="text-neutral-900 font-bold">
+              étudiant en informatique
+            </span>
+            .
+          </p>
+          <p className="text-xl md:text-2xl leading-relaxed text-neutral-600 max-w-2xl">
+            Passionné par la tech, j&apos;aime développer des applications qui
+            vont à l&apos;essentiel : fluides, performantes et simples à
+            utiliser.
+          </p>
         </div>
       </div>
 
-      <div className="relative w-48 h-48 md:w-72 md:h-72 shrink-0">
-        <Image
-          src="/simon-cv-photo.jpg"
-          alt="Portrait de Simon Husser"
-          fill
-          className="object-cover rounded-2xl shadow-md rotate-3"
-          priority
-        />
+      <div className="shrink-0 mt-8 md:mt-0">
+        <Link
+          href="/about"
+          className="group flex items-center justify-center w-24 h-24 md:w-32 md:h-32 bg-[rgb(152,38,244)] text-white rounded-full shadow-lg shadow-[rgb(152,38,244)]/20 hover:scale-110 transition-transform duration-300 ring-4 ring-transparent hover:ring-[rgb(152,38,244)]/10"
+          aria-label="En savoir plus"
+        >
+          <ArrowRightIcon className="w-10 h-10 md:w-12 md:h-12 group-hover:translate transition-transform" />
+        </Link>
       </div>
     </div>
   );

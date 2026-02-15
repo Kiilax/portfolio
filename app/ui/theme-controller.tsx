@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
-import { cinzel, bitcountPropSingle } from "@/app/ui/font";
+import { inter, bitcountPropSingle } from "@/app/ui/font";
 
 export function ThemeController() {
   const pathname = usePathname();
@@ -16,11 +16,11 @@ export function ThemeController() {
     const applyTheme = () => {
       if (isCoderThemeTarget) {
         html.setAttribute("data-theme", "coder");
-        body.classList.remove(cinzel.className);
+        body.classList.remove(inter.className);
         body.classList.add(bitcountPropSingle.className);
       } else {
         html.removeAttribute("data-theme");
-        body.classList.add(cinzel.className);
+        body.classList.add(inter.className);
         body.classList.remove(bitcountPropSingle.className);
       }
     };

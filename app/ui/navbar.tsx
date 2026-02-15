@@ -2,9 +2,8 @@
 
 import {
   UserIcon,
-  HomeIcon,
-  EnvelopeIcon,
   CommandLineIcon,
+  ArrowLeftIcon,
 } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
@@ -13,21 +12,31 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const links = [
-  { href: "/", label: "Home", icon: HomeIcon },
-  { href: "/projects", label: "Projects", icon: CommandLineIcon },
-  { href: "/about", label: "About", icon: UserIcon },
-  { href: "/contact", label: "Contact", icon: EnvelopeIcon },
+  { href: "/about", label: "Ma présentation", icon: UserIcon },
+  { href: "/projects", label: "Mes projets", icon: CommandLineIcon },
 ];
 
 export function NavBar() {
   const pathname = usePathname();
   const [hoveredPath, setHoveredPath] = useState<string | null>(null);
 
+  if (pathname === "/") {
+    return null;
+  }
+
   return (
-    <nav>
+    <nav className="relative w-full flex items-center justify-center">
+      <Link
+        href="/"
+        className="absolute left-0 h-12 w-12 flex items-center justify-center bg-(--nav-bg)/90 border border-(--nav-border) rounded-full shadow-sm text-(--nav-text) hover:text-(--nav-text-active) pointer-events-auto backdrop-blur-sm transition-all duration-200 hover:scale-110"
+        aria-label="Retour à l'accueil"
+      >
+        <ArrowLeftIcon className="w-5 h-5" />
+      </Link>
+
       <ul
         key={pathname}
-        className="flex flex-row gap-8 sm:gap-20 text-md font-medium uppercase tracking-wide opacity-90 backdrop-blur-sm justify-center rounded-full py-3 shadow-sm border pointer-events-auto transition-colors duration-500"
+        className="flex w-fit mx-auto flex-row gap-8 px-8 text-md font-medium uppercase tracking-wide opacity-90 backdrop-blur-sm justify-center rounded-full py-2 shadow-sm border pointer-events-auto transition-colors duration-500"
         style={{
           backgroundColor: "var(--nav-bg)",
           borderColor: "var(--nav-border)",
@@ -83,7 +92,7 @@ export function NavBar() {
                 />
                 <p
                   className={clsx(
-                    "hidden md:block font-medium uppercase tracking-wide text-sm pt-0.5 relative z-10 transition-colors duration-200",
+                    "hidden md:block font-medium tracking-wide text-sm pt-0.5 relative z-10 transition-colors duration-200",
                   )}
                   style={{
                     color: isActive

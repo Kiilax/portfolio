@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
-import { cinzel } from "@/app/ui/font";
+import { inter } from "@/app/ui/font";
 import "./globals.css";
 import { NavBar } from "@/app/ui/navbar";
+import { Footer } from "@/app/ui/footer";
 
 import { ThemeController } from "@/app/ui/theme-controller";
 
 export const metadata: Metadata = {
   title: "Simon",
-  description: "A minimalist portfolio created with Next.js",
+  description: "Mon portfolio, il présente mes projets et mes compétences.",
+  icons: {
+    icon: "/s-md.png",
+  },
 };
 
 export default function RootLayout({
@@ -16,15 +20,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body
-        className={`${cinzel.className} antialiased min-h-screen flex flex-col max-w-4xl mx-auto px-6 py-12`}
+        className={`${inter.className} antialiased min-h-screen flex flex-col max-w-4xl mx-auto px-6 py-12`}
       >
+        <div className="fixed inset-0 -z-50 bg-(--background) transition-colors duration-300" />
         <ThemeController />
         <header className="mb-16 sticky top-6 z-50 pointer-events-none">
           <NavBar />
         </header>
         <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );
