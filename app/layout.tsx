@@ -7,8 +7,8 @@ import { Footer } from "@/app/ui/footer";
 import { ThemeController } from "@/app/ui/theme-controller";
 
 export const metadata: Metadata = {
-  title: "Simon",
-  description: "Mon portfolio, il présente mes projets et mes compétences.",
+  title: "Simon Husser",
+  description: "Site web de Simon Husser, développeur informatique",
   icons: {
     icon: "/s-md.png",
   },
