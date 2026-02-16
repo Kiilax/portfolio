@@ -82,16 +82,21 @@ export default function About() {
               Backend
             </h3>
             <div className="flex flex-wrap gap-2">
-              {["Spring Boot", "NestJS", "Node.js", "PostgreSQL"].map(
-                (tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 bg-white border border-neutral-200 rounded-md text-sm font-medium text-neutral-700"
-                  >
-                    {tech}
-                  </span>
-                ),
-              )}
+              {[
+                "Spring Boot",
+                "NestJS",
+                "Node.js",
+                "Express",
+                "Prisma",
+                "Hibernate",
+              ].map((tech) => (
+                <span
+                  key={tech}
+                  className="px-3 py-1 bg-white border border-neutral-200 rounded-md text-sm font-medium text-neutral-700"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
           </div>
 
@@ -100,7 +105,14 @@ export default function About() {
               Frontend
             </h3>
             <div className="flex flex-wrap gap-2">
-              {["Angular", "React", "Next.js", "Tailwind CSS"].map((tech) => (
+              {[
+                "Angular",
+                "React",
+                "React Native",
+                "React Router",
+                "Next.js",
+                "Tailwind CSS",
+              ].map((tech) => (
                 <span
                   key={tech}
                   className="px-3 py-1 bg-white border border-neutral-200 rounded-md text-sm font-medium text-neutral-700"
@@ -116,14 +128,16 @@ export default function About() {
               Outils & DevOps
             </h3>
             <div className="flex flex-wrap gap-2">
-              {["Docker", "Git", "GitLab CI/CD", "Figma"].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 bg-white border border-neutral-200 rounded-md text-sm font-medium text-neutral-700"
-                >
-                  {tech}
-                </span>
-              ))}
+              {["Docker", "Git", "GitLab CI/CD", "Figma", "Notion"].map(
+                (tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1 bg-white border border-neutral-200 rounded-md text-sm font-medium text-neutral-700"
+                  >
+                    {tech}
+                  </span>
+                ),
+              )}
             </div>
           </div>
         </div>
